@@ -1,9 +1,9 @@
 package homework4.heroes;
 
-import homework4.Enemy;
+import homework4.enemies.Enemy;
 
 public class Warrior extends Hero {
-    private int damage = 20;
+    private final int damage = 20;
 
     public Warrior(String name) {
         super(name);

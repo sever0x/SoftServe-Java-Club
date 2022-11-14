@@ -1,6 +1,9 @@
-package homework4;
+package homework4.enemies;
 
-public class Enemy implements Mortal {
+import homework4.Mortal;
+import homework4.heroes.Hero;
+
+public abstract class Enemy implements Mortal {
     private int health;
 
     public Enemy(int health) {
@@ -15,12 +18,9 @@ public class Enemy implements Mortal {
         this.health = health;
     }
 
-    public void takeDamage(int damage) {
-        if (isAlive()) {
-            setHealth(getHealth() - damage);
-            System.out.println("Enemy took " + damage + " damage. Enemy health: " + getHealth());
-        }
-    }
+    public abstract void takeDamage(int damage);
+
+    public abstract void attackHero(Hero hero);
 
     @Override
     public boolean isAlive() {
